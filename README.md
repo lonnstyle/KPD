@@ -12,12 +12,16 @@
 ```
 ---
 ## Documentation
-Please write a docstring for all functions, especially those code which are not self-explaining<br/>
-docstring formats as follow:
-* [Google](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
-* [PEP 257](https://www.python.org/dev/peps/pep-0257/#specification)
-* [Numpy](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)
-* [reST](https://pythonhosted.org/an_example_pypi_project/sphinx.html#function-definitions)
+Please write [documentation comments](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments)
+sample as follow:
+```cs
+/// <value>Property <c>X</c> represents the point's x-coordinate.</value>
+public int X
+{
+   get { return x; }
+   set { x = value; }
+}
+```
 
 Also, please add [Debug.log](https://docs.unity3d.com/ScriptReference/Debug.Log.html) for unity codes, it helps for checking codes are functioning well or not
 
