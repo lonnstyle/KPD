@@ -34,3 +34,23 @@ and make sure all your commit message should be in [semantic format](https://gis
 >|
 >+-------> Type: chore, docs, feat, fix, refactor, style, or test.
 >```
+
+---
+## File Structure
+currently all stuffs should goes into `unity` folder, as all stuffs are done in unity
+* unity
+  * Assets
+    * Animation
+    * Backgrounds
+    * Fonts (all `TMP` presets)
+    * Icons
+    * Motion (source file of `Animation`)
+    * Scenes
+    * scripts
+    * TextMesh Pro (package import)
+  * Library (system generate)
+  * Logs (system generate)
+  * Packages (system generate)
+  * ProjectSettings (don't edit directly, make changes in unity)
+  * Temp (system generate)
+  * UserSettings (don't edit directly, make changes in unity)
