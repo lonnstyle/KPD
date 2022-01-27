@@ -32,7 +32,9 @@ public class CustomManager : MonoBehaviour
 
     private void Save()
     {
-        PlayerPrefs.SetString("characterColor", colorButton.colors.normalColor.ToString());
-        // Debug.Log(colorButton.colors.normalColor.ToString());
+        PlayerPrefs.SetFloat("characterColorR", colorButton.colors.normalColor.r);
+        PlayerPrefs.SetFloat("characterColorG", colorButton.colors.normalColor.g);
+        PlayerPrefs.SetFloat("characterColorB", colorButton.colors.normalColor.b);
+        Debug.Log(colorButton.colors.normalColor.ToString());
     }
 }
