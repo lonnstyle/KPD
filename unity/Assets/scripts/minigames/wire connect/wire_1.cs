@@ -8,6 +8,7 @@ public class wire_1 : MonoBehaviour
     public GameObject lightOn;
     Vector3 startPoint;
     Vector3 startPosition;
+    float width;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class wire_1 : MonoBehaviour
         startPosition = transform.position;
         Debug.Log(startPosition);
         Debug.Log(startPoint);
+        width = wireEnd.size.x;
     }
 
     private void OnMouseDrag()
@@ -35,7 +37,7 @@ public class wire_1 : MonoBehaviour
 
                 // check if the wires are same color
                 if (transform.parent.name.Equals(collider.transform.parent.name))
-                {   
+                {
                     Debug.Log(startPosition);
                     // count connection
                     main.Instance.SwitchChange(1);
@@ -74,13 +76,15 @@ public class wire_1 : MonoBehaviour
 
         // update direction
         Vector3 direction = newPosition - startPoint;
+        direction.z = 0f;
         transform.right = direction * transform.lossyScale.x;
 
         // update scale
         float dist = Vector2.Distance(startPoint, newPosition);
-        wireEnd.size = new Vector2(dist*3+(Mathf.Abs(startPosition.x)), wireEnd.size.y);
-        Debug.Log("Sprite size: " + wireEnd.size.ToString("F2"));   
+        Debug.Log("startPoint:" + startPoint + "\nnewPositiion" + newPosition + "\ndist:" + dist);
+        wireEnd.size = new Vector2(dist * 3 + width, wireEnd.size.y);
+        Debug.Log("Sprite size: " + wireEnd.size.ToString("F2"));
 
     }
- }
+}
 
