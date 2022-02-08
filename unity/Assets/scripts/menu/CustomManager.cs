@@ -12,7 +12,9 @@ public class CustomManager : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("characterColor"))
         {
-            PlayerPrefs.SetString("characterColor", new Color(0f, 0f, 0f, 0f).ToString());
+            PlayerPrefs.SetFloat("characterColorR", 1f);
+            PlayerPrefs.SetFloat("characterColorG", 1f);
+            PlayerPrefs.SetFloat("characterColorB", 1f);
         }
         Load();
     }
