@@ -14,12 +14,13 @@ public class loadingTask : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadingTime = (Random.Range(14,20));
+        LoadingTime = (Random.Range(14, 20));
     }
     // Update is called once per frame
     void Update()
-    {   if (istimer)
-        {  
+    {
+        if (istimer)
+        {
             timer += Time.deltaTime;
             DisplayTime();
         }
@@ -30,16 +31,16 @@ public class loadingTask : MonoBehaviour
         }
     }
     public void AnimateBar()
-    {   
+    {
         istimer = true;
-        LeanTween.scaleX(bar,14,LoadingTime);
+        LeanTween.scaleX(bar, 14, LoadingTime);
         //the length the bar scale up right near to the background is 14 
     }
     void DisplayTime()
     {
-        int minutes = Mathf.FloorToInt(timer/60.0f);
-        int seconds = Mathf.FloorToInt(timer - minutes *60);
-        timerText.text = string.Format("Loading time: {0:0}:{1:00}", minutes,seconds);
+        int minutes = Mathf.FloorToInt(timer / 60.0f);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        timerText.text = string.Format("Loading time: {0:0}:{1:00}", minutes, seconds);
     }
-     
+
 }
