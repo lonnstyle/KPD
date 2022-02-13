@@ -82,7 +82,7 @@ public class wire_1 : MonoBehaviour
         // update scale
         float dist = Vector2.Distance(startPoint, newPosition);
         Debug.Log("startPoint:" + startPoint + "\nnewPositiion" + newPosition + "\ndist:" + dist);
-        wireEnd.size = new Vector2(dist * 3 + width, wireEnd.size.y);
+        wireEnd.size = new Vector2(dist/45+width, wireEnd.size.y);
         Debug.Log("Sprite size: " + wireEnd.size.ToString("F2"));
 
     }

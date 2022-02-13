@@ -47,3 +47,6 @@ TagManager:
   - name: UI
     uniqueID: 4060827575
     locked: 0
+  - name: switch
+    uniqueID: 812258665
+    locked: 0

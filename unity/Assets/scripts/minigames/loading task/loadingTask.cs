@@ -14,6 +14,7 @@ public class loadingTask : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadingTime = (Random.Range(14,20));
     }
     // Update is called once per frame
     void Update()
