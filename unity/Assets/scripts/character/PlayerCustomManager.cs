@@ -18,17 +18,13 @@ public class PlayerCustomManager : MonoBehaviourPun
         colors[1] = PlayerPrefs.GetFloat("characterColorG");
         colors[2] = PlayerPrefs.GetFloat("characterColorB");
         Color newColor = new Color(colors[0], colors[1], colors[2]);
-        // playerRenderer.color = newColor;
         Debug.Log(newColor.ToString());
         photonView.RPC("RPC_changeColor",RpcTarget.AllBuffered,colors[0], colors[1], colors[2]);
-        // Debug.Log(newColor.ToString());
-        Debug.Log(colors.ToString());
     }
     [PunRPC]
     void RPC_changeColor(float R,float G,float B)
     {
         Color newColor = new Color(R,G,B);
-        Debug.Log(newColor.ToString());
         playerRenderer.color = newColor;
     }
 }
