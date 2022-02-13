@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class keypadTask : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject GamePanel;
     public Text _cardCode;
     public Text _inputCode;
     public float _codeResetTimeInSeconds = 0.5f;
@@ -32,13 +33,14 @@ public class keypadTask : MonoBehaviour
         if (_inputCode.text == _cardCode.text)
         {
             _inputCode.text = "correct";
-            StartCoroutine(ResetCode());
             main.Instance.SwitchChange(1);
+            StartCoroutine(Closepanel(GamePanel));
         }
         else if (_inputCode.text.Length >= _codeLength)
         {
             _inputCode.text = "Failed";
             StartCoroutine(ResetCode());
+
         }
     }
 
@@ -52,4 +54,9 @@ public class keypadTask : MonoBehaviour
         _isResetting = false;
     }
     // Update is called once per frame
+    private IEnumerator Closepanel(GameObject CloseObject)
+    {
+        yield return new WaitForSeconds(1f);
+        GamePanel.SetActive(false);
+    }
 }
