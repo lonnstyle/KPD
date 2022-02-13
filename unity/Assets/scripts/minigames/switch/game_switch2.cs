@@ -20,7 +20,7 @@ public class game_switch2 : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnMouseUp() {
+    public void OnMouseUp() {
         Switch_ison = !Switch_ison;
         _isLighting = !_isLighting;
 

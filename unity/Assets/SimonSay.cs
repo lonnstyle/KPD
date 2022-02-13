@@ -43,7 +43,7 @@ public class SimonSay : MonoBehaviour
         for (int i =0; i< lightOrder.Length;i++)
         {
             lightOrder[i] = (Random.Range(0,8));
-            Debug.Log("for loop" + lightOrder[i]);
+            //Debug.Log("for loop" + lightOrder[i]);
         }
         for (int i =0; i< rowLights.Length; i++)
         {
@@ -59,12 +59,12 @@ public class SimonSay : MonoBehaviour
 
         buttonsclicked++;
         if(button == lightOrder[buttonsclicked-1]){
-            Debug.Log("pass");
+           // Debug.Log("pass");
             _ispassed = true;
         }
         else 
         {
-            Debug.Log("failed");
+            //Debug.Log("failed");
             _iswon = false;
             _ispassed = false;
             StartCoroutine(ColorBlink(red));
@@ -77,7 +77,7 @@ public class SimonSay : MonoBehaviour
         }
         if (buttonsclicked == level && _ispassed == true && buttonsclicked == 5) 
         {
-            Debug.Log("failed");
+            //Debug.Log("failed");
             _iswon = true;
             main.Instance.SwitchChange(1);
             StartCoroutine(ColorBlink(green));
@@ -100,8 +100,8 @@ public class SimonSay : MonoBehaviour
             {
                 buttons[i].GetComponent<Image>().color = colorToBlink;
             }
-            for (int i=5; i<buttons.Length;i++)
-            {
+            for (int i=4; i<=buttons.Length;i++) //the array of light 
+            {       //fixed
                 rowLights[i].GetComponent<Image>().color = colorToBlink;
             }
 
