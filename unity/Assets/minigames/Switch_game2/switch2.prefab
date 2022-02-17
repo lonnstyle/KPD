@@ -528,8 +528,33 @@ GameObject:
   - component: {fileID: 3625475463170062927}
   - component: {fileID: 782420824823600780}
   - component: {fileID: 615020020049238702}
+<<<<<<< HEAD
   - component: {fileID: 1196890427528364766}
   - component: {fileID: 344776775239408989}
+<<<<<<< HEAD
+=======
+=======
+  - component: {fileID: 7327116890905478178}
+  - component: {fileID: 782420824823600780}
+>>>>>>> 190ce88 (simon says game and switch game 2)
+=======
+  - component: {fileID: 7327116890905478178}
+  - component: {fileID: 782420824823600780}
+>>>>>>> 33675c9 (simon says game and switch game 2)
+=======
+  - component: {fileID: 7327116890905478178}
+  - component: {fileID: 782420824823600780}
+>>>>>>> ba1b4ab (simon says game and switch game 2)
+=======
+  - component: {fileID: 3625475463170062927}
+  - component: {fileID: 782420824823600780}
+  - component: {fileID: 615020020049238702}
+  - component: {fileID: 1196890427528364766}
+  - component: {fileID: 344776775239408989}
+>>>>>>> 8e23973 (some bugs fixed and number task)
+=======
+>>>>>>> 182c7b1 (The drag and drop task)
+>>>>>>> 1b62ee1 (The drag and drop task)
   m_Layer: 0
   m_Name: switch_1
   m_TagString: Untagged
@@ -595,7 +620,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1c9fc9ed49987be40a6e728ecb83beab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -615,6 +640,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7433035047171783444}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!114 &1196890427528364766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,3 +715,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 190ce88 (simon says game and switch game 2)
+=======
+>>>>>>> 33675c9 (simon says game and switch game 2)
+=======
+>>>>>>> ba1b4ab (simon says game and switch game 2)
+=======
+>>>>>>> 8e23973 (some bugs fixed and number task)
+=======
+>>>>>>> 182c7b1 (The drag and drop task)
+>>>>>>> 1b62ee1 (The drag and drop task)
