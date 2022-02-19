@@ -47,3 +47,12 @@ TagManager:
   - name: UI
     uniqueID: 4060827575
     locked: 0
+  - name: switch
+    uniqueID: 812258665
+    locked: 0
+  - name: FruitsBlack
+    uniqueID: 1453931241
+    locked: 0
+  - name: Fruits
+    uniqueID: 1828334115
+    locked: 0
