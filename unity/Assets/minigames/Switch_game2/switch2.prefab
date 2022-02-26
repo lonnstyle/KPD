@@ -82,23 +82,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
---- !u!222 &4037558579411783144
-CanvasRenderer:
+--- !u!1 &625927370241876975
+GameObject:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 1836454470540407963}
-  - component: {fileID: 9024846226089610432}
-  - component: {fileID: 3744171696061188462}
-  - component: {fileID: 857445681977927237}
-=======
   - component: {fileID: 8064626387086565343}
   - component: {fileID: 9024846226089610432}
->>>>>>> d481362 (simon says game and switch game 2)
   m_Layer: 0
   m_Name: trak2_light3a.blend
   m_TagString: Untagged
@@ -106,37 +99,20 @@ CanvasRenderer:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
-<<<<<<< HEAD
---- !u!224 &1836454470540407963
-RectTransform:
-=======
 --- !u!4 &8064626387086565343
 Transform:
->>>>>>> d481362 (simon says game and switch game 2)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625927370241876975}
   m_LocalRotation: {x: -0, y: -0, z: -0.70928574, w: 0.7049212}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 0, y: 0, z: 8.98695}
-=======
   m_LocalPosition: {x: 4.23, y: 1.16, z: 8.98695}
->>>>>>> d481362 (simon says game and switch game 2)
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7733455219597177991}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.354}
-<<<<<<< HEAD
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.23, y: 1.16}
-  m_SizeDelta: {x: 0.96, y: 2.56}
-  m_Pivot: {x: 0.5, y: 0.5}
-=======
->>>>>>> d481362 (simon says game and switch game 2)
 --- !u!212 &9024846226089610432
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -188,47 +164,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
---- !u!222 &3744171696061188462
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625927370241876975}
-  m_CullTransparentMesh: 1
---- !u!114 &857445681977927237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625927370241876975}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e3a51d63ccad2e3489bf50c863d1c097, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
-=======
->>>>>>> d481362 (simon says game and switch game 2)
 --- !u!1 &4001422488850758187
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,13 +194,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3193153696376520982}
-<<<<<<< HEAD
-  - {fileID: 1836454470540407963}
-  - {fileID: 1465886956067331190}
-=======
   - {fileID: 8064626387086565343}
   - {fileID: 5565562045001409242}
->>>>>>> d481362 (simon says game and switch game 2)
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -298,11 +228,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-<<<<<<< HEAD
-  m_Offset: {x: -0.14, y: 1.21}
-=======
   m_Offset: {x: -0.06, y: 1.21}
->>>>>>> d481362 (simon says game and switch game 2)
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -343,13 +269,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-<<<<<<< HEAD
-  - {fileID: 3625475463170062927}
-  - {fileID: 5785110340739689273}
-=======
   - {fileID: 7327116890905478178}
   - {fileID: 2446101929590812922}
->>>>>>> d481362 (simon says game and switch game 2)
   m_Father: {fileID: 7733455219597177991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -387,15 +308,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 5785110340739689273}
-  - component: {fileID: 6897780386760987091}
-  - component: {fileID: 5763315920985436248}
-  - component: {fileID: 6942079806114231389}
-=======
   - component: {fileID: 2446101929590812922}
   - component: {fileID: 6897780386760987091}
->>>>>>> d481362 (simon says game and switch game 2)
   m_Layer: 0
   m_Name: switch_2
   m_TagString: Untagged
@@ -403,37 +317,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
-<<<<<<< HEAD
---- !u!224 &5785110340739689273
-RectTransform:
-=======
 --- !u!4 &2446101929590812922
 Transform:
->>>>>>> d481362 (simon says game and switch game 2)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6658241866858910345}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: -0.00026568514}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 0, y: 0, z: 8.425396}
-=======
   m_LocalPosition: {x: -0.05096428, y: 0.04, z: 8.425396}
->>>>>>> d481362 (simon says game and switch game 2)
   m_LocalScale: {x: 0.3627422, y: 0.41839382, z: 1}
   m_Children: []
   m_Father: {fileID: 3193153696376520982}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.03}
-<<<<<<< HEAD
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.19, y: 0.05}
-  m_SizeDelta: {x: 13.90087, y: 6.72}
-  m_Pivot: {x: 0.5, y: 0.5}
-=======
->>>>>>> d481362 (simon says game and switch game 2)
 --- !u!212 &6897780386760987091
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -485,47 +382,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
---- !u!222 &5763315920985436248
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6658241866858910345}
-  m_CullTransparentMesh: 1
---- !u!114 &6942079806114231389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6658241866858910345}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68c30c0a7c2e68f44b257e88ede022ce, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
-=======
->>>>>>> d481362 (simon says game and switch game 2)
 --- !u!1 &7433035047171783444
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,16 +390,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 3625475463170062927}
-  - component: {fileID: 782420824823600780}
-  - component: {fileID: 615020020049238702}
-  - component: {fileID: 1196890427528364766}
-  - component: {fileID: 344776775239408989}
-=======
   - component: {fileID: 7327116890905478178}
   - component: {fileID: 782420824823600780}
->>>>>>> d481362 (simon says game and switch game 2)
   m_Layer: 0
   m_Name: switch_1
   m_TagString: Untagged
@@ -551,37 +399,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
---- !u!224 &3625475463170062927
-RectTransform:
-=======
 --- !u!4 &7327116890905478178
 Transform:
->>>>>>> d481362 (simon says game and switch game 2)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7433035047171783444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 0, y: 0, z: 8.425396}
-=======
   m_LocalPosition: {x: -0.05, y: 0.04, z: 8.425396}
->>>>>>> d481362 (simon says game and switch game 2)
   m_LocalScale: {x: -0.35239592, y: 0.42660758, z: 1}
   m_Children: []
   m_Father: {fileID: 3193153696376520982}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.17, y: 0.05}
-  m_SizeDelta: {x: 14.16, y: 6.72}
-  m_Pivot: {x: 0.5, y: 0.5}
-=======
->>>>>>> d481362 (simon says game and switch game 2)
 --- !u!212 &782420824823600780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -633,88 +464,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
---- !u!222 &615020020049238702
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7433035047171783444}
-  m_CullTransparentMesh: 1
---- !u!114 &1196890427528364766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7433035047171783444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1c9fc9ed49987be40a6e728ecb83beab, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &344776775239408989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7433035047171783444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1196890427528364766}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-=======
->>>>>>> d481362 (simon says game and switch game 2)
