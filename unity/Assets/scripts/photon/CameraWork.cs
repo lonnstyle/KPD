@@ -24,7 +24,7 @@ namespace Com.MyCompany.MyGame
 
         [Tooltip("The distance in the local x-z plane to the target")]
         [SerializeField]
-        private float distance = 7.0f;
+        private float distance = 0.0f;
 
 
         [Tooltip("The height we want the camera to be above the target")]
@@ -34,7 +34,7 @@ namespace Com.MyCompany.MyGame
 
         [Tooltip("Allow the camera to be offseted vertically from the target, for example giving more view of the sceneray and less ground.")]
         [SerializeField]
-        private Vector3 centerOffset = Vector3.zero;
+         private Vector3 centerOffset = Vector3.zero;
 
 
         [Tooltip("Set this as false if a component of a prefab being instanciated by Photon Network, and manually call OnStartFollowing() when and if needed.")]
@@ -129,7 +129,7 @@ namespace Com.MyCompany.MyGame
             cameraOffset.y = height;
 
 
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position +this.transform.TransformVector(cameraOffset), smoothSpeed*Time.deltaTime);
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position +this.transform.TransformVector(cameraOffset), smoothSpeed);
 
 
             cameraTransform.LookAt(this.transform.position + centerOffset);
