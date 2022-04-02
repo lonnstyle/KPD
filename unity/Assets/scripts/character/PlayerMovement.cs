@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviourPun
     void FixedUpdate()
     {
         // Move the player character
-        controller.Move(horizontalMove, verticalMove);
+        controller.Move(horizontalMove*5, verticalMove*5);
     }
 
     public void killed()
