@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviourPun
         }//check if it is self character
         horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = Input.GetAxisRaw("Vertical");
+        
     }
 
     void FixedUpdate()
