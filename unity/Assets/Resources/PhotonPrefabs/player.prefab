@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1330777901686051722}
+  otherPlayer: {fileID: 0}
 --- !u!114 &1330777901686051726
 MonoBehaviour:
   m_ObjectHideFlags: 0
