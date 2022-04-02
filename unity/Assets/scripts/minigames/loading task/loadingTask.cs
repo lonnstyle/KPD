@@ -5,7 +5,7 @@ using DentedPixel;
 using TMPro;
 
 public class loadingTask : MonoBehaviour
-{
+{   
     public GameObject bar;
     public int LoadingTime;
     public TMP_Text timerText;

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0510bdd0aa3f6b14bba8185046137990
+=======
+guid: 38ade9840fcf9f144bfa310c821a6d3e
+>>>>>>> 4effa37 (matchmaking room, version 1)
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

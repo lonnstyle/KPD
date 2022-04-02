@@ -28,7 +28,7 @@ public class CustomManager : MonoBehaviour
     {
         if (colorButton.colors.normalColor.ToString() == PlayerPrefs.GetString("characterColor"))
         {
-            // colorButton.enabled = true;
+             //colorButton.enabled = true;
         }
     }
 

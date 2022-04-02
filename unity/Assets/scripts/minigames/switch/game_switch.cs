@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class game_switch : MonoBehaviour
-{
+{   
     public GameObject on;
     public bool ison;
     // Start is called before the first frame update
