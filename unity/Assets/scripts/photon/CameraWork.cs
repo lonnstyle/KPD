@@ -129,7 +129,7 @@ namespace Com.MyCompany.MyGame
             cameraOffset.y = height;
 
 
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position + this.transform.TransformVector(cameraOffset), smoothSpeed*2);
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position + this.transform.TransformVector(cameraOffset), smoothSpeed*5);
 
 
             cameraTransform.LookAt(this.transform.position + centerOffset);

@@ -3,9 +3,18 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.UI;
+using System.Text;
 public class LobbyController : MonoBehaviourPunCallbacks
-{
+{   
+    //[SerializeField] 
+    //private InputField playerNameInput;
+
+    private bool isPlayerNameChanging;
+
+
+
     [SerializeField]
     private GameObject JoinButton; //button used for joining a game.
     [SerializeField]
@@ -62,4 +71,28 @@ public class LobbyController : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
         Debug.Log("Cancelled ");
     }
+        //change the name test...
+   /* public void OnChangePlayerNamePressed(){
+        if (isPlayerNameChanging == false){
+            playerNameInput.text = playerNameLabel.text;
+            playerNameLabel.GameObject.SetActive(false);
+            playerNameInput.GameObject.SetActive(true);
+            isPlayerNameChanging = true;
+        }
+        else {
+            //if to check for empty or very long name
+            if (string.IsNullOrEmpty(playerNameInput.text) == false && playerNameInput.text.Length <= 12){
+                playerNameLabel.text = playerNameInput.text;
+                PhotonNetwork.LocalPlayer.NickName = playerNameInput.text;
+                photonView.RPC("UpdatePlayerUpdate", RPCTarget.All);
+            }
+            playerNameLabel.gameObject.SetActive(true);
+            playerNameInput.gameObject.SetActive(false);
+            isPlayerNameChanging = false;
+        }
+    }
+    [PunRPC]
+    public void ForcePlayerListUpdate(){
+        UpdatePlayerList();
+    }   */
 }

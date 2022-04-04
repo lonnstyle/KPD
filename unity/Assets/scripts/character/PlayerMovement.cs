@@ -2,9 +2,15 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using Photon.Realtime;
 namespace Com.MyCompany.MyGame{
 public class PlayerMovement : MonoBehaviourPun
-    {
+    {   PhotonView myPV;
+        GameObject myPlayerAvatar;
+
+        Player[] allPlayers;
+        int myNumberInRoom;
 
         public CharacterController2D controller;
         float horizontalMove = 0f;
@@ -14,10 +20,10 @@ public class PlayerMovement : MonoBehaviourPun
         private bool collidePlayer = false;
         public GameObject otherPlayer;
         private Animator animator;
-
         // Start is called before the first frame update
         void Start()
-        {
+        {   
+
             CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
 
