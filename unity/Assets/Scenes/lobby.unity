@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplayerSceneIndex: 2
   menuSceneIndex: 0
-  minPlayerToStart: 2
+  minPlayerToStart: 1
   roomCountDisplay: {fileID: 1497895063}
   timerToStartDisplay: {fileID: 761434380}
   maxWaitTime: 5
@@ -267,7 +267,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.372299
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -291,8 +291,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.71, y: 8.97, z: -7.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 62, y: 33.9, z: -7.1}
+  m_LocalScale: {x: 0.775, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -611,7 +611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772926863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -409.9201, y: -244.2201, z: 2.05}
+  m_LocalPosition: {x: -470, y: -276.6, z: 2.05}
   m_LocalScale: {x: 1.3107864, y: 1.5869912, z: 1}
   m_Children: []
   m_Father: {fileID: 715248767}

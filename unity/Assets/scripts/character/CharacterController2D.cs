@@ -7,7 +7,7 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
-
+    VentsSystem ventsSystem;
     [Header("Events")]
     [Space]
 
@@ -60,4 +60,58 @@ public class CharacterController2D : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+        #region Vent Movement Control
+    public void EnterVent(VentsSystem ventsSystem)
+    {
+        this.ventsSystem = ventsSystem;
+
+        //Animation and sounds
+        //playerAnimator.SetTrigger("Vent");
+        //playerAudioController.StopWalking();
+        //playerAudioController.PlayVent();
+    }
+
+    public void VentEntered()
+    {
+        DisablePlayer();
+
+        ventsSystem.PlayerInVent();
+    }
+
+    public bool IsInVent()
+    {
+        return GetComponent<Rigidbody2D>().simulated;
+    }
+
+    public void VentExited()
+    {
+        EnablePlayer();
+
+        //sounds
+        //playerAudioController.PlayVent();
+    }
+    #region Change Player Properties
+
+    public void KillPlayer()
+    {
+        //playerAnimator.SetTrigger("Dead");
+    }
+    void DisablePlayer()
+    {
+        //Color c = playerSpriteRenderer.color;
+        //c.a = 0;
+        //playerSpriteRenderer.color = c;
+        GetComponent<Rigidbody2D>().simulated = false;
+        //playerAudioController.StopWalking();
+    }
+    void EnablePlayer()
+    {
+       // Color c = playerSpriteRenderer.color;
+       // c.a = 1;
+        //playerSpriteRenderer.color = c;
+        GetComponent<Rigidbody2D>().simulated = true;
+        //MovePlayer();
+    }
+    #endregion
+    #endregion
 }
