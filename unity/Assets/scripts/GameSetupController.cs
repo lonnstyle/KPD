@@ -9,13 +9,13 @@ public class GameSetupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       CreatePlayer();
+        CreatePlayer();
     }
 
     private void CreatePlayer()
     {
-    
+
         Debug.Log("Creating Player");
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "player"), new Vector3(Random.Range(2,11),Random.Range(0,10),-2f), Quaternion.identity);
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "player"), new Vector3(Random.Range(765, 1065), Random.Range(940, 1080), -2f), Quaternion.identity);
     }
 }
