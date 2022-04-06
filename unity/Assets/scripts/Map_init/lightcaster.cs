@@ -8,6 +8,7 @@ public class lightcaster : MonoBehaviour
     [SerializeField] LayerMask ignoreMe;
     [SerializeField] float getRadius;
     [SerializeField] LayerMask wallMask;
+
     public Collider[] sceneObjects; //The objects in the scene to effect the lighting.
 
     private Mesh mesh; //The light mesh.
@@ -73,10 +74,12 @@ public class lightcaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetWalls();
+
         mesh.Clear(); //clears the mesh before changing it.
 
         // The next few lines create an array to store all vertices of all the scene objects that should react to the light.
-        Vector3[] objverts = sceneObjects[0].GetComponent<MeshFilter>().mesh.vertices;
+        Vector3[] objverts = sceneObjects[0].GetComponent<MeshFilter>().mesh.vertices; 
         for (int i = 1; i < sceneObjects.Length; i++)
         {
             objverts = ConcatArrays(objverts, sceneObjects[i].GetComponent<MeshFilter>().mesh.vertices);
