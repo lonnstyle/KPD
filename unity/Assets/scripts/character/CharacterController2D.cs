@@ -39,7 +39,7 @@ public class CharacterController2D : MonoBehaviour
         REPORT.Enable();
         MOUSE.Enable();
         INTERACTION.Enable();
-    }¡@¡@
+    }
 
     public void Move(float horizontal_move, float vertical_move)
     {
