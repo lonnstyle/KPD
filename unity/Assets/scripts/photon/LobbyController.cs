@@ -2,7 +2,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-public class StartLobbyController : MonoBehaviourPunCallbacks
+public class LobbyController : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private GameObject quickLoadingButton; //Displays loading while connecting to Photon servers.

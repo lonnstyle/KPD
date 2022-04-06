@@ -1,7 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class StartRoomController : MonoBehaviourPunCallbacks
+public class RoomController : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private int multiplayerSceneIndex; //Number for the build index to the multiplay scene.
