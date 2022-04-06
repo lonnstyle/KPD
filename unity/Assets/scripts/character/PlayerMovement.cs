@@ -315,3 +315,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
             isImposter = true;
     }
 }
+
+internal interface IPunObservable
+{
+}

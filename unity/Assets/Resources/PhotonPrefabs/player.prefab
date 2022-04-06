@@ -205,38 +205,46 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 34355bbf-882d-4163-950a-2a301481dcec
+    - m_Name: 2D Vector
+      m_Id: 8b25cdf4-d360-49aa-9004-3d599bd6faaf
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: WASD
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 5f3dae9d-7c2e-41fe-8e7c-dea252d81816
       m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: WASD
-      m_Flags: 0
-    - m_Name: 
-      m_Id: b75ce0e5-f41c-484b-8f9a-728b8a0fca40
+      m_Flags: 8
+    - m_Name: down
+      m_Id: fb876ff2-cd6c-4241-98f5-eb4ba82dbc8c
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: WASD
-      m_Flags: 0
-    - m_Name: 
-      m_Id: b54b0727-c99f-431a-8b33-4840fcb5a922
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 4d623b7e-b97b-45b4-9400-e1f027ba3e6b
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: WASD
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 11d09f81-9653-4aa8-b32c-7b957480c9b7
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 023b2749-0d33-4830-92c1-04567c8ba273
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: WASD
-      m_Flags: 0
+      m_Flags: 8
   movementSpeed: 5
   isImposter: 0
   KILL:
@@ -469,8 +477,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1621725565
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 92693342ce134a3448e0db02c22a34e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
