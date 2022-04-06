@@ -15,7 +15,7 @@ public class NameTag : MonoBehaviour
     // Update is called once per frame
     private void LateUpdate()
     {
-        transform.LookAt(transform.position + mainCameraTransform.rotation * Vector3.forward,
-            mainCameraTransform.rotation * Vector3.up);
+        transform.LookAt(transform.position + mainCameraTransform.rotation * Vector3.zero,
+            mainCameraTransform.rotation * Vector3.zero);
     }
 }

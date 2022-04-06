@@ -1,32 +1,33 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class RoomController : MonoBehaviourPunCallbacks
+public class StartRoomController : MonoBehaviourPunCallbacks
 {
     [SerializeField]
-    private int multiplayerSceneIndex;//Number for the build index to multiplayer scene
+    private int multiplayerSceneIndex; //Number for the build index to the multiplay scene.
 
-    public override void OnEnable() {
+    public override void OnEnable()
+    {
         PhotonNetwork.AddCallbackTarget(this);
     }
 
-    public override void OnDisable() {
+    public override void OnDisable()
+    {
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 
-    public override void OnJoinedRoom() //callback of joined a room successfully
+    public override void OnJoinedRoom() //Callback function for when we successfully create or join a room.
     {
         Debug.Log("Joined Room");
         StartGame();
     }
 
-    private void StartGame() //function for loading into multiplayer scene.
+    private void StartGame() //Function for loading into the multiplayer scene.
     {
-        if (PhotonNetwork.IsMasterClient) //MasterClient => host
-        //TODO: we should separate join/host in the future, and only the host should be able to StartGame, without using an if statement.
+        if (PhotonNetwork.IsMasterClient)
         {
             Debug.Log("Starting Game");
-            PhotonNetwork.LoadLevel(multiplayerSceneIndex); //due to AutomaticallySyncScene, all player should load the level together.
+            PhotonNetwork.LoadLevel(multiplayerSceneIndex); //because of AutoSyncScene all players who join the room will also be loaded into the multiplayer scene.
         }
     }
 }

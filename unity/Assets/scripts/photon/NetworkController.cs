@@ -1,54 +1,45 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
-using UnityEngine.UI;
-using TMPro;
+
 public class NetworkController : MonoBehaviourPunCallbacks
-{   //[SerializeField] 
-    //private TMP_InputField playerNameInput;
-    //[SerializeField] 
-    //private Text playerNameLabel;
-   // private bool isPlayerNameChanging;
-    // Documentation: https://doc.photonengine.com/en-us/pun/current/getting-started/pun-intro
-    // Scripting API: https://doc-api.photonengine.com/en/pun/v2/index.html
-    // Start is called before the first frame update
-    void Start()
+{
+    /******************************************************
+    * Refer to the Photon documentation and scripting API for official definitions and descriptions
+    * 
+    * Documentation: https://doc.photonengine.com/en-us/pun/current/getting-started/pun-intro
+    * Scripting API: https://doc-api.photonengine.com/en/pun/v2/index.html
+    * 
+    * If your Unity editor and standalone builds do not connect with each other but the multiple standalones
+    * do then try manually setting the FixedRegion in the PhotonServerSettings during the development of your project.
+    * https://doc.photonengine.com/en-us/realtime/current/connection-and-authentication/regions
+    *
+    * ******************************************************/
+    [SerializeField]
+    bool connectOnStart;
+
+    [SerializeField]
+    private int gameVersion;
+
+    private void Start()
     {
-        PhotonNetwork.ConnectUsingSettings(); // Connect to Photon master servers
+        if (connectOnStart)
+        {
+            Connect();
+        }
+    }
+
+    // Start is called before the first frame update
+    public void Connect()
+    {
+        PhotonNetwork.GameVersion = gameVersion.ToString();
+        PhotonNetwork.ConnectUsingSettings(); //Connects to Photon master servers
+        //Other ways to make a connection can be found here: https://doc-api.photonengine.com/en/pun/v2/class_photon_1_1_pun_1_1_photon_network.html
     }
 
     public override void OnConnectedToMaster()
     {
-        Debug.Log("[PUN2] Connected to " + PhotonNetwork.CloudRegion + " server!");
-    }
-
-   /* public void OnChangePlayerNamePressed(){
-        if (isPlayerNameChanging == false){
-            playerNameInput.text = playerNameLabel.text;
-            playerNameLabel.GameObject.SetActive(false);
-            playerNameInput.GameObject.SetActive(true);
-            isPlayerNameChanging = true;
-        }
-        else {
-            //if to check for empty or very long name
-            if (string.IsNullOrEmpty(playerNameInput.text) == false && playerNameInput.text.Length <= 12){
-                playerNameLabel.text = playerNameInput.text;
-                PhotonNetwork.LocalPlayer.NickName = playerNameInput.text;
-                photonView.RPC("UpdatePlayerUpdate", RPCTarget.All);
-            }
-            playerNameLabel.gameObject.SetActive(true);
-            playerNameInput.gameObject.SetActive(false);
-            isPlayerNameChanging = false;
-        }
-    }
-    [PunRPC]
-    public void ForcePlayerListUpdate(){
-        UpdatePlayerList();
-    }  */
-    // Update is called once per frame
-    void Update()
-    {
-
+        Debug.Log("We are now connected to the " + PhotonNetwork.CloudRegion + " server!");
     }
 }

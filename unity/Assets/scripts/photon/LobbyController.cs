@@ -1,98 +1,58 @@
 using Photon.Pun;
 using Photon.Realtime;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-using System.Text;
-public class LobbyController : MonoBehaviourPunCallbacks
-{   
-    //[SerializeField] 
-    //private InputField playerNameInput;
 
-    private bool isPlayerNameChanging;
+public class StartLobbyController : MonoBehaviourPunCallbacks
+{
+    [SerializeField]
+    private GameObject quickLoadingButton; //Displays loading while connecting to Photon servers.
+    [SerializeField]
+    private GameObject quickStartButton; //button used for creating and joining a game.
+    [SerializeField]
+    private GameObject quickCancelButton; //button used to stop searing for a game to join.
+    [SerializeField]
+    private int roomSize; //Manual set the number of player in the room at one time.
 
-
-
-    [SerializeField]
-    private GameObject JoinButton; //button used for joining a game.
-    [SerializeField]
-    private GameObject CancelButton; //button used to stop searing for a game to join.
-    [SerializeField]
-    private int RoomSize; //Manual set the number of player in the room at one time.
-    [SerializeField]
-    private GameObject LoadingButton;
-    // Start is called before the first frame update
-    public override void OnConnectedToMaster() //callback function for when the first connection is eased
+    public override void OnConnectedToMaster() //Callback function for when the first connection is established successfully.
     {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        JoinButton.SetActive(true);
-        LoadingButton.SetActive(false);
-        Debug.Log("Ready!");
+        PhotonNetwork.AutomaticallySyncScene = true; //Makes it so whatever scene the master client has loaded is the scene all other clients will load
+        quickStartButton.SetActive(true);
+        quickLoadingButton.SetActive(false);
     }
 
-    public void Join() //paired to the join button
+    public void QuickStart() //Paired to the Quick Start button
     {
-        JoinButton.SetActive(false);
-        CancelButton.SetActive(true);
-        PhotonNetwork.JoinRandomRoom(); //First try to join an existing room
-        Debug.Log("Attemping to join Photon game room.");
+        quickStartButton.SetActive(false);
+        quickCancelButton.SetActive(true);
+        PhotonNetwork.JoinRandomRoom(); //First tries to join an existing room
+        Debug.Log("Quick start");
     }
 
-    public override void OnJoinRandomFailed(short returnCode, string message) //callback function for failed to join a room
+    public override void OnJoinRandomFailed(short returnCode, string message) //Callback function for if we fail to join a rooom
     {
         Debug.Log("Failed to join a room");
         CreateRoom();
     }
 
-    void CreateRoom() //try to host a game room
+    void CreateRoom() //trying to create our own room
     {
-        Debug.Log("Creating a game room.");
-        int randomRoomNumber = Random.Range(0, 10000); //create a random room number 
-        RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)RoomSize };
-        PhotonNetwork.CreateRoom("Room" + randomRoomNumber, roomOps); //attempting to create a new game room
-        Debug.Log("New room number:" + randomRoomNumber);
+        Debug.Log("Creating room now");
+        int randomRoomNumber = Random.Range(0, 10000); //creating a random name for the room
+        RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)roomSize };
+        PhotonNetwork.CreateRoom("Room" + randomRoomNumber, roomOps); //attempting to create a new room
+        Debug.Log(randomRoomNumber);
     }
 
-    public override void OnCreateRoomFailed(short returnCode, string message) //callback function for failed to create room
+    public override void OnCreateRoomFailed(short returnCode, string message) //callback function for if we fail to create a room. Most likely fail because room name was taken.
     {
-        Debug.Log("Failed to create room... try again...");
-        Debug.Log(message);
-        CreateRoom(); //try again to recreate the room, with re-generated room name
-        // most likely failed to create becuz of existing room name, which should update CreateRoom() in the future for optimization
-        //TODO: we should add a max retry for that, but shouldn't be a case for dev build, ignore for now
+        Debug.Log("Failed to create room... trying again");
+        CreateRoom(); //Retrying to create a new room with a different name.
     }
 
-    public void Cancel() //paired to cancel button
+    public void QuickCancel() //Paired to the cancel button. Used to stop looking for a room to join.
     {
-        CancelButton.SetActive(false);
-        JoinButton.SetActive(true);
+        quickCancelButton.SetActive(false);
+        quickStartButton.SetActive(true);
         PhotonNetwork.LeaveRoom();
-        Debug.Log("Cancelled ");
     }
-        //change the name test...
-   /* public void OnChangePlayerNamePressed(){
-        if (isPlayerNameChanging == false){
-            playerNameInput.text = playerNameLabel.text;
-            playerNameLabel.GameObject.SetActive(false);
-            playerNameInput.GameObject.SetActive(true);
-            isPlayerNameChanging = true;
-        }
-        else {
-            //if to check for empty or very long name
-            if (string.IsNullOrEmpty(playerNameInput.text) == false && playerNameInput.text.Length <= 12){
-                playerNameLabel.text = playerNameInput.text;
-                PhotonNetwork.LocalPlayer.NickName = playerNameInput.text;
-                photonView.RPC("UpdatePlayerUpdate", RPCTarget.All);
-            }
-            playerNameLabel.gameObject.SetActive(true);
-            playerNameInput.gameObject.SetActive(false);
-            isPlayerNameChanging = false;
-        }
-    }
-    [PunRPC]
-    public void ForcePlayerListUpdate(){
-        UpdatePlayerList();
-    }   */
 }

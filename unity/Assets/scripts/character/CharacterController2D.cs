@@ -1,7 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using UnityEngine.InputSystem;
+using System.IO;
+using System;
 using UnityEngine.Events;
 
-public class CharacterController2D : MonoBehaviour
+public class CharacterController2D : MonoBehaviour 
 {
     [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
     private Rigidbody2D m_Rigidbody2D;
@@ -12,9 +18,12 @@ public class CharacterController2D : MonoBehaviour
     [Space]
 
     public UnityEvent OnLandEvent;
-
-
-
+        [SerializeField] InputAction MOUSE;
+        [SerializeField] InputAction KILL;
+        [SerializeField] InputAction Dotask;
+        [SerializeField] InputAction Report;
+        [SerializeField] InputAction INTERACTION;
+        [SerializeField] InputAction REPORT; 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -25,6 +34,12 @@ public class CharacterController2D : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        REPORT.Enable();
+        MOUSE.Enable();
+        INTERACTION.Enable();
+    }¡@¡@
 
     public void Move(float horizontal_move, float vertical_move)
     {
@@ -91,6 +106,25 @@ public class CharacterController2D : MonoBehaviour
         //playerAudioController.PlayVent();
     }
     #region Change Player Properties
+
+    /*void Interact(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Performed)
+        {
+            RaycastHit hit;
+            Ray ray = myCamera.ScreenPointToRay(mousePositionInput);
+            if(Physics.Raycast(ray, out hit, interactLayer))
+            {
+                if(hit.transform.tag == "Interactable")
+                {
+                    if (!hit.transform.GetChild(0).gameObject.activeInHierarchy)
+                        return;
+                    Interactable temp = hit.transform.GetComponent<Interactable>();
+                    temp.PlayMiniGame();
+                }
+            }
+        }
+    }   */ 
 
     public void KillPlayer()
     {

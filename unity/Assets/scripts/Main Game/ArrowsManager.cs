@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class ArrowsManager : MonoBehaviour
 {
     //Make sure the number of arrows is greater than the biggest vents system
-    [SerializeField] List<GameObject> arrows;
+    [SerializeField] 
+    List<GameObject> arrows;
     int index = 0;
 
     //Other Classes

@@ -1,21 +1,18 @@
 using Photon.Pun;
 using System.IO;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameSetupController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // This script will be added to any multiplayer scene
     void Start()
     {
-        CreatePlayer();
+        CreatePlayer(); //Create a networked player object for each player that loads into the multiplayer scenes.
     }
 
     private void CreatePlayer()
     {
-
         Debug.Log("Creating Player");
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "player"), new Vector3(Random.Range(765, 1065), Random.Range(940, 1080), -2f), Quaternion.identity);
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), Vector3.zero, Quaternion.identity);
     }
 }
