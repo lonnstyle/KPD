@@ -25,7 +25,7 @@ public class PlayerCollider : MonoBehaviour
             //This is used to move the imposter around without activating the triggers
             if (PlayerMovement.IsInVent())
             {
-                other.gameObject.GetComponent<Vent>().EnableVent(PlayerMovement);
+                other.gameObject.GetComponent<Vent>().EnableVent(PlayerMovement);       
             }
         }
 

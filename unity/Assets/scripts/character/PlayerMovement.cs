@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         if (!myPV.IsMine)
         {
             myCamera.gameObject.SetActive(false);
-            lightMask.SetActive(false);
+            //lightMask.SetActive(false);
             myLightCaster.enabled = false;
             return;
         }
@@ -192,7 +192,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         }
     }
 
-    public void KillTarget(InputAction.CallbackContext context)
+    private void KillTarget(InputAction.CallbackContext context)
     {
         if (!myPV.IsMine)
             return;
@@ -209,11 +209,10 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
                     return;
 
                 transform.position = targets[targets.Count - 1].transform.position;
-                //targets[targets.Count - 1].Die();
+                targets[targets.Count - 1].Die();
                 targets[targets.Count - 1].myPV.RPC("RPC_Kill", RpcTarget.All);
                 targets.RemoveAt(targets.Count - 1);
 
-                //StartCoroutine(PlayerKillController.ResetKill());
             }
         }
     }
