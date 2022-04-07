@@ -228,7 +228,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         if (!myPV.IsMine)
             return;
 
-        Body tempBody = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AU_Body"), transform.position, transform.rotation)
+        Body tempBody = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Body"), transform.position, transform.rotation)
             .GetComponent<Body>();
         tempBody.SetColor(myAvatarSprite.color);
 
