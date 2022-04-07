@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5826796211209613385}
   - component: {fileID: 1330777901686051718}
   - component: {fileID: 4891367595792150343}
-  - component: {fileID: 3044618592103587364}
   - component: {fileID: 8585745109954790635}
   - component: {fileID: 6709187439533582317}
   - component: {fileID: 1246661770705242286}
@@ -97,29 +96,12 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 3044618592103587364}
   - {fileID: 8585745109954790635}
   - {fileID: 1545875915734438028}
   - {fileID: 5982555673728811724}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3044618592103587364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330777901686051713}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!114 &8585745109954790635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +236,15 @@ MonoBehaviour:
     m_Id: e1c6bbb8-a5ba-458b-8a65-a64a405e5dc3
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e7344590-3199-4683-abce-822621a84204
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: KILL
+      m_Flags: 0
   myCollider: {fileID: 5376147766798067466}
   bodyPrefab: {fileID: 6503582150883817197, guid: 076b722a91bcf2b469ed2054d3909e9b, type: 3}
   REPORT:

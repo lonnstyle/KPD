@@ -14,9 +14,9 @@ public class Vent : MonoBehaviour
 
     #region Triggers
 
-    public void EnableVent(CharacterController2D characterController2D)
+    public void EnableVent(PlayerMovement PlayerMovement)
     {
-        ventsSystem.CanEnterVentSystem(characterController2D, ID);
+        ventsSystem.CanEnterVentSystem(PlayerMovement, ID);
     }
     public void DisableVent()
     {

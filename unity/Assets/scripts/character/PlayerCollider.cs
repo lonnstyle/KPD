@@ -6,12 +6,12 @@ public class PlayerCollider : MonoBehaviour
 {
     //This Class is the collider controller class for the player
 
-    CharacterController2D characterController2D;
+    PlayerMovement PlayerMovement;
     PlayerKillController playerKillController;
 
     void Awake()
     {
-        characterController2D = GetComponent<CharacterController2D>();
+        PlayerMovement = GetComponent<PlayerMovement>();
         playerKillController = GetComponent<PlayerKillController>();
     }
 
@@ -23,9 +23,9 @@ public class PlayerCollider : MonoBehaviour
         {
             //If the Imposter is activated skip
             //This is used to move the imposter around without activating the triggers
-            if (characterController2D.IsInVent())
+            if (PlayerMovement.IsInVent())
             {
-                other.gameObject.GetComponent<Vent>().EnableVent(characterController2D);
+                other.gameObject.GetComponent<Vent>().EnableVent(PlayerMovement);
             }
         }
 
@@ -34,7 +34,7 @@ public class PlayerCollider : MonoBehaviour
         {
             //If the Imposter is activated skip
             //to not allow killing from the vent
-            if (characterController2D.IsInVent())
+            if (PlayerMovement.IsInVent())
             {
                 //playerKillController.EnableKilling(other.GetComponent<PlayerKillDetector>());
             }
@@ -48,7 +48,7 @@ public class PlayerCollider : MonoBehaviour
         {
             //If the Imposter is activated skip
             //to not allow killing from the vent
-            if (characterController2D.IsInVent())
+            if (PlayerMovement.IsInVent())
                 other.gameObject.GetComponent<Vent>().DisableVent();
         }
 
@@ -57,7 +57,7 @@ public class PlayerCollider : MonoBehaviour
         {
             //If the Imposter is activated skip
             //This is used to move the imposter around without activating the triggers
-            if (characterController2D.IsInVent())
+            if (PlayerMovement.IsInVent())
             {
                 playerKillController.DisableKilling();
             }

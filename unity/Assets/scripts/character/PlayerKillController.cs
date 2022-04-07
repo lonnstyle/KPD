@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class PlayerKillController : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class PlayerKillController : MonoBehaviour
     #region Triggers
 
     //Called when a player enter the player collider
-    public void EnableKilling(CharacterController2D characterController2D)
+    public void EnableKilling(PlayerMovement PlayerMovement)
     {
         this.playerKillDetector = playerKillDetector;
 

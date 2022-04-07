@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
 {
     [SerializeField] bool hasControl;
     public static PlayerMovement localPlayer;
-
+    VentsSystem VentsSystem;
     //Components
     Rigidbody myRB;
     Transform myAvatar;
@@ -192,7 +192,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         }
     }
 
-    private void KillTarget(InputAction.CallbackContext context)
+    public void KillTarget(InputAction.CallbackContext context)
     {
         if (!myPV.IsMine)
             return;
@@ -212,6 +212,8 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
                 //targets[targets.Count - 1].Die();
                 targets[targets.Count - 1].myPV.RPC("RPC_Kill", RpcTarget.All);
                 targets.RemoveAt(targets.Count - 1);
+
+                //StartCoroutine(PlayerKillController.ResetKill());
             }
         }
     }
@@ -314,8 +316,60 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[ImposterNumber])
             isImposter = true;
     }
+    public void KillPlayer()
+    {
+        //playerAnimator.SetTrigger("Dead");
+    }
+    void DisablePlayer()
+    {
+        //Color c = playerSpriteRenderer.color;
+        //c.a = 0;
+        //playerSpriteRenderer.color = c;
+        GetComponent<Rigidbody2D>().simulated = false;
+        //playerAudioController.StopWalking();
+    }
+    void EnablePlayer()
+    {
+        // Color c = playerSpriteRenderer.color;
+        // c.a = 1;
+        //playerSpriteRenderer.color = c;
+        GetComponent<Rigidbody2D>().simulated = true;
+        //MovePlayer();
+    }
+    #region Vent Movement Control
+    public void EnterVent(VentsSystem ventsSystem)
+    {
+        this.VentsSystem = ventsSystem;
+
+        //Animation and sounds
+        //playerAnimator.SetTrigger("Vent");
+        //playerAudioController.StopWalking();
+        //playerAudioController.PlayVent();
+    }
+
+    public void VentEntered()
+    {
+        DisablePlayer();
+
+        VentsSystem.PlayerInVent();
+    }
+
+    public bool IsInVent()
+    {
+        return GetComponent<Rigidbody2D>().simulated;
+    }
+
+    public void VentExited()
+    {
+        EnablePlayer();
+
+        //sounds
+        //playerAudioController.PlayVent();
+    }
+    #endregion Change Player Properties
+
+
+
+
 }
 
-internal interface IPunObservable
-{
-}

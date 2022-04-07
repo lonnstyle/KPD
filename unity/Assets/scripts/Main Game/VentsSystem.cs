@@ -13,7 +13,7 @@ public class VentsSystem : MonoBehaviour
     int CurrentVentID;
 
     //Other Classes
-    CharacterController2D characterController2D;
+    PlayerMovement PlayerMovement;
     ArrowsManager arrowsManager;
 
     #region Awake function
@@ -39,9 +39,9 @@ public class VentsSystem : MonoBehaviour
     #region Triggers
 
     //When a Player Enters a trigger of a vent in this Vents system
-    public void CanEnterVentSystem(CharacterController2D characterController2D, int VentID)
+    public void CanEnterVentSystem(PlayerMovement PlayerMovement, int VentID)
     {
-        this.characterController2D = characterController2D;
+        this.PlayerMovement = PlayerMovement;
         CurrentVentID = VentID;
 
         //Make the button clickable and add the function to enter the vents system when clicked
@@ -64,8 +64,8 @@ public class VentsSystem : MonoBehaviour
     public void EnterIntoTheVentSystem()
     {
         //Make the Player Enter the Vent
-        characterController2D.EnterVent(this);
-        characterController2D.gameObject.transform.position = connectedVents[CurrentVentID].GetPos();
+        PlayerMovement.EnterVent(this);
+        PlayerMovement.gameObject.transform.position = connectedVents[CurrentVentID].GetPos();
 
         //Change the Button Listener function to the ExitTheVentSystem function
         VentUIButton.onClick.RemoveAllListeners();
@@ -90,8 +90,8 @@ public class VentsSystem : MonoBehaviour
         arrowsManager.ResetArrows();
 
         //Make the Player Exit the Vent
-        characterController2D.VentExited();
-        characterController2D.gameObject.transform.position = connectedVents[CurrentVentID].GetPos();
+        PlayerMovement.VentExited();
+        PlayerMovement.gameObject.transform.position = connectedVents[CurrentVentID].GetPos();
 
         //Change the Button Listener function to the EnterIntoTheVentSystem function
         VentUIButton.onClick.RemoveAllListeners();
@@ -105,7 +105,7 @@ public class VentsSystem : MonoBehaviour
         CurrentVentID = ventID;
 
         //Move the Player to that Vent
-        characterController2D.gameObject.transform.position = connectedVents[ventID].GetPos();
+        PlayerMovement.gameObject.transform.position = connectedVents[ventID].GetPos();
 
         //Reset the Arrows for the next Vent
         arrowsManager.ResetArrows();
