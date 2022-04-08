@@ -18,7 +18,7 @@ public class PlayerKillController : MonoBehaviour
 
     void Awake()
     {
-        KillButtonCoolDownText.text = "";
+        KillButtonCoolDownText.text = "123";
         KillButtonImage.fillAmount = 1;
     }
 
