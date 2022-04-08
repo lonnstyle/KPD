@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     PhotonView myPV;
     [SerializeField] GameObject lightMask;
     // [SerializeField] lightcaster myLightCaster;
-
+    float TimeLeft = 0;
     private void Awake()
     {
         KILL.performed += KillTarget;
@@ -198,7 +198,8 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
             return;
         if (!isImposter)
             return;
-
+        if (TimeLeft > 0)
+            return;
         if (context.phase == InputActionPhase.Performed)
         {
             if (targets.Count == 0)
@@ -212,7 +213,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
                 targets[targets.Count - 1].Die();
                 targets[targets.Count - 1].myPV.RPC("RPC_Kill", RpcTarget.All);
                 targets.RemoveAt(targets.Count - 1);
-
+                StartCoroutine(Killtime());
             }
         }
     }
@@ -234,7 +235,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
 
         isDead = true;
 
-        myAnim.SetBool("IsDead", isDead);
+        myAnim.SetBool("Dead", isDead);
         gameObject.layer = 10;
         myCollider.enabled = false;
     }
@@ -367,7 +368,16 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     }
     #endregion Change Player Properties
 
-
+    private IEnumerator Killtime()
+    {
+        TimeLeft = 30;
+        while (TimeLeft != 0)
+        {
+            yield return new WaitForSeconds(1);
+            TimeLeft--;
+            Debug.Log("kill time reset remain:"+ TimeLeft);
+        }
+    }
 
 
 }
