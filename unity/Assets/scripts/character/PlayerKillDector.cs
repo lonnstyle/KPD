@@ -1,3 +1,4 @@
+/*  (for perference only) 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,4 +18,4 @@ public class PlayerKillDetector : MonoBehaviour
         GetComponent<AudioSource>().Play();
         GetComponent<SpriteRenderer>().sprite = killedsprite;
     }
-}
+}*/

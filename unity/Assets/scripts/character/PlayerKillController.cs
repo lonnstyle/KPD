@@ -1,3 +1,4 @@
+/* (for preferenece only too)
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -82,4 +83,4 @@ public class PlayerKillController : MonoBehaviour
     }
 
     #endregion
-}
+}  */
