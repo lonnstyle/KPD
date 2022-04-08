@@ -1,5 +1,8 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0b38036 (fix: meta files)
 guid: 93f857a1374306f448c89d677ebaa6cd
 TextureImporter:
   internalIDToNameTable: []
@@ -95,6 +98,9 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< HEAD
 =======
 guid: 93f857a1374306f448c89d677ebaa6cd
 >>>>>>> 5875fe9 (refactor: objectives)
+=======
+>>>>>>> 0b38036 (fix: meta files)
