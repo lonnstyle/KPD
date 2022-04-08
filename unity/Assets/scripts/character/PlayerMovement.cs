@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     //Networking
     PhotonView myPV;
     [SerializeField] GameObject lightMask;
-    [SerializeField] lightcaster myLightCaster;
+    // [SerializeField] lightcaster myLightCaster;
 
     private void Awake()
     {
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         {
             myCamera.gameObject.SetActive(false);
             //lightMask.SetActive(false);
-            myLightCaster.enabled = false;
+            // myLightCaster.enabled = false;
             return;
         }
         if (myColor == Color.clear)

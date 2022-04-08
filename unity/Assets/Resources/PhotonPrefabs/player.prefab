@@ -186,7 +186,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   lightMask: {fileID: 0}
-  myLightCaster: {fileID: 0}
 --- !u!54 &5826796211209613385
 Rigidbody:
   m_ObjectHideFlags: 0
