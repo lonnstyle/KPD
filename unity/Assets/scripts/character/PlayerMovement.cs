@@ -318,7 +318,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     }
     public void KillPlayer()
     {
-        //playerAnimator.SetTrigger("Dead");
+        myAnim.SetTrigger("Dead");
     }
     void DisablePlayer()
     {
