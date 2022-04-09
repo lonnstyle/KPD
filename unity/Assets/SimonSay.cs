@@ -122,7 +122,7 @@ public class SimonSay : MonoBehaviour
         }
         if (_iswon)
         {
-            Tasktext.SetActive(false);
+            //Tasktext.SetActive(false);
             ClosePanel();
         }
         EnableInteractableButtons();

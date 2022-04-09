@@ -172,20 +172,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 522136209065023582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b5b438a33eea51409e62a3607657761, type: 3}
+  m_Script: {fileID: 11500000, guid: e5dd6684c31592b41b356aba783d7a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 522136209989071687}
-  - {fileID: 522136210005378152}
-  - {fileID: 522136208921508070}
-  - {fileID: 522136209072208342}
-  - {fileID: 522136210046743593}
-  - {fileID: 522136210393336207}
-  - {fileID: 522136210576696261}
-  - {fileID: 522136209785575784}
-  - {fileID: 522136208992804289}
-  - {fileID: 522136209947937896}
+  numberTaskCompleted: 0
 --- !u!1 &522136209072208341
 GameObject:
   m_ObjectHideFlags: 0

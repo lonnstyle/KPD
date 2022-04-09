@@ -37,7 +37,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
     public override void OnJoinRandomFailed(short returnCode, string message) //callback function for failed to join a room
     {
         CancelButton.SetActive(false);
-
+        JoinButton.SetActive(true);
         Debug.Log("Failed to join a room");
         // CreateRoom();
     }

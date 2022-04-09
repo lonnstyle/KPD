@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class Body : MonoBehaviour
 {
     [SerializeField] SpriteRenderer bodySprite;

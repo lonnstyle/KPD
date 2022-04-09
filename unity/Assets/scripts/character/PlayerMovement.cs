@@ -5,12 +5,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.IO;
 using System;
-
+using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour, IPunObservable
 {
     [SerializeField] bool hasControl;
     public static PlayerMovement localPlayer;
-    VentsSystem VentsSystem;
+    // VentsSystem VentsSystem;
     //Components
     Rigidbody myRB;
     Transform myAvatar;
@@ -235,7 +235,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
 
         isDead = true;
 
-        myAnim.SetBool("Dead", isDead);
+        myAnim.SetBool("IsDead", isDead);
         gameObject.layer = 10;
         myCollider.enabled = false;
     }
@@ -318,55 +318,9 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     }
     public void KillPlayer()
     {
-        myAnim.SetTrigger("Dead");
-    }
-    void DisablePlayer()
-    {
-        //Color c = playerSpriteRenderer.color;
-        //c.a = 0;
-        //playerSpriteRenderer.color = c;
-        GetComponent<Rigidbody2D>().simulated = false;
-        //playerAudioController.StopWalking();
-    }
-    void EnablePlayer()
-    {
-        // Color c = playerSpriteRenderer.color;
-        // c.a = 1;
-        //playerSpriteRenderer.color = c;
-        GetComponent<Rigidbody2D>().simulated = true;
-        //MovePlayer();
-    }
-    #region Vent Movement Control
-    public void EnterVent(VentsSystem ventsSystem)
-    {
-        this.VentsSystem = ventsSystem;
-
-        //Animation and sounds
-        //playerAnimator.SetTrigger("Vent");
-        //playerAudioController.StopWalking();
-        //playerAudioController.PlayVent();
+        //myAnim.SetTrigger("Dead");
     }
 
-    public void VentEntered()
-    {
-        DisablePlayer();
-
-        VentsSystem.PlayerInVent();
-    }
-
-    public bool IsInVent()
-    {
-        return GetComponent<Rigidbody2D>().simulated;
-    }
-
-    public void VentExited()
-    {
-        EnablePlayer();
-
-        //sounds
-        //playerAudioController.PlayVent();
-    }
-    #endregion Change Player Properties
 
     private IEnumerator Killtime()
     {
@@ -375,10 +329,24 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         {
             yield return new WaitForSeconds(1);
             TimeLeft--;
-            Debug.Log("kill time reset remain:"+ TimeLeft);
+            Debug.Log("kill time reset remain:" + TimeLeft);
         }
     }
-
-
+    
+    void loadWinScene(int TaskCount)
+    {if(TaskCount >= 2 * PhotonNetwork.CountOfPlayers)
+        {
+            myPV.RPC("RPC_loadwinScene", RpcTarget.All);
+        }
+            
+    }
+    [PunRPC]
+    void RPC_loadWinScene()
+    {
+        if (!isImposter)
+            SceneManager.LoadScene(3);
+        else
+            SceneManager.LoadScene(4);
+    }
 }
 

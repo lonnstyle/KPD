@@ -43,6 +43,11 @@ MonoBehaviour:
   - RPC_SendTimer
   - RPC_Play
   - RPC_Kill
+  - RPC_CompleteNumberTask
+  - RPC_SyncImposter
+  - Win
+  - NormalpeopleWin
+  - RPC_loadWinScene
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
