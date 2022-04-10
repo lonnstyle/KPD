@@ -24,13 +24,13 @@ public class CustomManager : MonoBehaviour
         Save();
     }
 
-    /* private void Load()
+     private void Load()
     {
         if (colorButton.colors.normalColor.ToString() == PlayerPrefs.GetString("characterColor"))
         {
              //colorButton.enabled = true;
         }
-    } */
+    } 
 
     private void Save()
     {

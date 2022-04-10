@@ -251,8 +251,8 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
             {
                 if (hit.transform == body)
                 {
-                    // Debug.Log(hit.transform.name);
-                    // Debug.Log(bodiesFound.Count);
+                    Debug.Log(hit.transform.name);
+                    Debug.Log(bodiesFound.Count);
                     if (bodiesFound.Contains(body.transform))
                         return;
                     bodiesFound.Add(body.transform);
@@ -273,7 +273,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         if (bodiesFound.Count == 0)
             return;
         Transform tempBody = bodiesFound[bodiesFound.Count - 1];
-        allBodies.Remove(tempBody);
+        // allBodies.Remove(tempBody);
         bodiesFound.Remove(tempBody);
         tempBody.GetComponent<Body>().Report();
     }

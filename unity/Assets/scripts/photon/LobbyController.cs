@@ -67,6 +67,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
         Debug.Log("Cancelled ");
     }
+
 }
 
 
