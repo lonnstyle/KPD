@@ -6,11 +6,13 @@ public class RoomController : MonoBehaviourPunCallbacks
     [SerializeField]
     private int multiplayerSceneIndex;//Number for the build index to multiplayer scene
 
-    public override void OnEnable() {
+    public override void OnEnable()
+    {
         PhotonNetwork.AddCallbackTarget(this);
     }
 
-    public override void OnDisable() {
+    public override void OnDisable()
+    {
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 

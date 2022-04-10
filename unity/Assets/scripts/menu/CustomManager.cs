@@ -16,7 +16,7 @@ public class CustomManager : MonoBehaviour
             PlayerPrefs.SetFloat("characterColorG", 1f);
             PlayerPrefs.SetFloat("characterColorB", 1f);
         }
-        Load();
+        //Load();
     }
 
     public void ChangeColor()
@@ -24,13 +24,13 @@ public class CustomManager : MonoBehaviour
         Save();
     }
 
-    private void Load()
+     private void Load()
     {
         if (colorButton.colors.normalColor.ToString() == PlayerPrefs.GetString("characterColor"))
         {
-            // colorButton.enabled = true;
+             //colorButton.enabled = true;
         }
-    }
+    } 
 
     private void Save()
     {

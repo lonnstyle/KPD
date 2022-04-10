@@ -7,6 +7,8 @@ using UnityEngine;
 public class LobbyController : MonoBehaviourPunCallbacks
 {
     [SerializeField]
+    private GameObject HostButton; //button used for hosting a game.
+    [SerializeField]
     private GameObject JoinButton; //button used for joining a game.
     [SerializeField]
     private GameObject CancelButton; //button used to stop searing for a game to join.
@@ -18,6 +20,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster() //callback function for when the first connection is eased
     {
         PhotonNetwork.AutomaticallySyncScene = true;
+        HostButton.SetActive(true);
         JoinButton.SetActive(true);
         LoadingButton.SetActive(false);
         Debug.Log("Ready!");
@@ -33,11 +36,13 @@ public class LobbyController : MonoBehaviourPunCallbacks
 
     public override void OnJoinRandomFailed(short returnCode, string message) //callback function for failed to join a room
     {
+        CancelButton.SetActive(false);
+        JoinButton.SetActive(true);
         Debug.Log("Failed to join a room");
-        CreateRoom();
+        // CreateRoom();
     }
 
-    void CreateRoom() //try to host a game room
+    public void CreateRoom() //try to host a game room
     {
         Debug.Log("Creating a game room.");
         int randomRoomNumber = Random.Range(0, 10000); //create a random room number 
@@ -58,8 +63,12 @@ public class LobbyController : MonoBehaviourPunCallbacks
     public void Cancel() //paired to cancel button
     {
         CancelButton.SetActive(false);
-        JoinButton.SetActive(true);
+        HostButton.SetActive(true);
         PhotonNetwork.LeaveRoom();
         Debug.Log("Cancelled ");
     }
+
 }
+
+
+

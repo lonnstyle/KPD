@@ -81,7 +81,6 @@ public class SimonSay : MonoBehaviour
         {
             //Debug.Log("failed");
             _iswon = true;
-            main.Instance.SwitchChange(1);
             StartCoroutine(ColorBlink(green));
         }
     }
@@ -123,7 +122,7 @@ public class SimonSay : MonoBehaviour
         }
         if (_iswon)
         {
-            Tasktext.SetActive(false);
+            //Tasktext.SetActive(false);
             ClosePanel();
         }
         EnableInteractableButtons();
@@ -138,7 +137,7 @@ public class SimonSay : MonoBehaviour
         {
             if (level >= colorOrderRunCount)
             {
-                Debug.Log(lightOrder[0]);
+                //Debug.Log(lightOrder[0]);
                 lightArray[lightOrder[i]].GetComponent<Image>().color = invisible;
                 yield return new WaitForSeconds(lightspeed);
                 lightArray[lightOrder[i]].GetComponent<Image>().color = green;

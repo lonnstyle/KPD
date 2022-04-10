@@ -5,7 +5,7 @@ using UnityEngine;
 public class main : MonoBehaviour
 {
     static public main Instance;
-
+    public GameObject panel;
     public int Count;
     public GameObject doneText;
     private int onCount = 0;
@@ -19,7 +19,16 @@ public class main : MonoBehaviour
         onCount = onCount + points;
         if (onCount == Count){
             doneText.SetActive(true);
+            StartCoroutine(ClosePanel());
+            
         }
     }
+    private IEnumerator ClosePanel()
+    {
+        yield return new WaitForSeconds(2f);
+        panel.SetActive(false);
+        doneText.SetActive(false);
+    }
+    
 }
 

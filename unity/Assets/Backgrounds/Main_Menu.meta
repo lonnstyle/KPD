@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
 guid: 8d5755d7418102541b15783027b7cbb1
+=======
+guid: 35dd1d3bc8d08f84382427637f5e0440
+>>>>>>> 4effa37 (matchmaking room, version 1)
+=======
+guid: 35dd1d3bc8d08f84382427637f5e0440
+>>>>>>> 1eef4d8 (fix: player gen area)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
