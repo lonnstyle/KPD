@@ -8,17 +8,18 @@ public class PlayerNameInput : MonoBehaviour
 {   
     [SerializeField] private TMP_InputField nameInputField = null;
     [SerializeField] private Button ConfirmButton = null;
-    
-    private const string PlayerPrefsNameKey = "PlayerName"; //
+
+    private const string PlayerPrefsNameKey = "player" ; //
 
     private void Start() {
-        SetUpUnputField();
+        SetUpInputField();
     }
-    private void SetUpUnputField(){
+    private void SetUpInputField(){
         if (!PlayerPrefs.HasKey(PlayerPrefsNameKey)){
             return; 
         }   //first time open the game, it wont do anything
-        string defaultName = PlayerPrefs.GetString(PlayerPrefsNameKey);
+        
+        string defaultName = PlayerPrefs.GetString(PlayerPrefsNameKey + Random.Range(1000,9999));
 
         nameInputField.text = defaultName;
 
@@ -27,12 +28,13 @@ public class PlayerNameInput : MonoBehaviour
     public void SetPlayerName(string name){
         ConfirmButton.interactable = !string.IsNullOrEmpty(name);
         //if not empty , the button will on
+
     }
     public void SavePlayerName(){
         string playerName = nameInputField.text;
 
         PhotonNetwork.NickName = playerName;
-
         PlayerPrefs.SetString(PlayerPrefsNameKey,playerName);
     }
 }
+

@@ -17,7 +17,7 @@ public class Sabotage : MonoBehaviour
         
     }
     public void ImposterFunc(PlayerMovement player)
-    {   if(player.ImposterFunc = true)
+    {  // if(player.ImposterFunc = true)
         SabotageButton.SetActive(true);
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 using System.IO;
 using System;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 public class PlayerMovement : MonoBehaviour, IPunObservable
 {
     [SerializeField] bool hasControl;
@@ -16,6 +18,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     Transform myAvatar;
     Animator myAnim;
 
+    [SerializeField] private TextMeshProUGUI nameText;
     //Player movement
     [SerializeField] InputAction WASD;
     Vector2 movementInput;
@@ -96,6 +99,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
 
         if (!myPV.IsMine)
         {
+            SetName();
             myCamera.gameObject.SetActive(false);
             //lightMask.SetActive(false);
             // myLightCaster.enabled = false;
@@ -319,6 +323,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         {
             isImposter = true;
             ImposterFunc = true;
+            nameText.color = Color.red;
         }
     }
 
@@ -361,6 +366,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         else
             SceneManager.LoadScene(3);
     }
-
+    void SetName() => nameText.text = myPV.Owner.NickName;
 }
+
 
