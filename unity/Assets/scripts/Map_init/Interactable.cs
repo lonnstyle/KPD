@@ -22,6 +22,10 @@ public class Interactable : MonoBehaviour
     {
         if (other.tag == "Player") { }
          highlight.SetActive(false);
+        if (miniGame != null)
+        {
+            miniGame.SetActive(false);
+        }
     }
 
     public void PlayMiniGame()
