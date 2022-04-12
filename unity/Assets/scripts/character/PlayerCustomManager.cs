@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCustomManager : MonoBehaviourPun
-{/*
+{
     [SerializeField] SpriteRenderer playerRenderer;
     private float[] colors = { 0f, 0f, 0f };
 
@@ -26,5 +26,5 @@ public class PlayerCustomManager : MonoBehaviourPun
     {
         Color newColor = new Color(R,G,B);
         playerRenderer.color = newColor;
-    } */
+    } 
 }

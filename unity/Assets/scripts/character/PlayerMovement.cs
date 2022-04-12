@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
 {
     [SerializeField] bool hasControl;
     public static PlayerMovement localPlayer;
-    // VentsSystem VentsSystem;
+    public bool ImposterFunc;
     //Components
     Rigidbody myRB;
     Transform myAvatar;
@@ -203,7 +203,9 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         if (context.phase == InputActionPhase.Performed)
         {
             if (targets.Count == 0)
-                return;
+            {
+                myPV.RPC("RPC_KillerloadwinScene", RpcTarget.All);
+            }
             else
             {
                 if (targets[targets.Count - 1].isDead)
@@ -251,8 +253,8 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
             {
                 if (hit.transform == body)
                 {
-                    Debug.Log(hit.transform.name);
-                    Debug.Log(bodiesFound.Count);
+                    //Debug.Log(hit.transform.name);
+                    //Debug.Log(bodiesFound.Count);
                     if (bodiesFound.Contains(body.transform))
                         return;
                     bodiesFound.Add(body.transform);
@@ -314,8 +316,12 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     public void BecomeImposter(int ImposterNumber)
     {
         if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[ImposterNumber])
+        {
             isImposter = true;
+            ImposterFunc = true;
+        }
     }
+
     public void KillPlayer()
     {
         //myAnim.SetTrigger("Dead");
@@ -334,7 +340,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     }
     
     void loadWinScene(int TaskCount)
-    {if(TaskCount >= 2 * PhotonNetwork.CountOfPlayers)
+    {if(TaskCount >= 1 * PhotonNetwork.CountOfPlayers)
         {
             myPV.RPC("RPC_loadwinScene", RpcTarget.All);
         }
@@ -348,5 +354,13 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         else
             SceneManager.LoadScene(4);
     }
+    void RPC_KillerLoadWinScene()
+    {
+        if (!isImposter)
+            SceneManager.LoadScene(4);
+        else
+            SceneManager.LoadScene(3);
+    }
+
 }
 
