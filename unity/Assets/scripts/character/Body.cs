@@ -3,10 +3,8 @@ public class Body : MonoBehaviour
 {
     [SerializeField] SpriteRenderer bodySprite;
 
-    public void SetColor(Color newColor)
-    {
-        bodySprite.color = newColor;
-    }
+    public void SetColor(Color newColor) => bodySprite.color = newColor;
+
 
     private void OnEnable()
     {

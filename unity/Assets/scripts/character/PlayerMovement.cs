@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerMovement : MonoBehaviour, IPunObservable
-{
+{   
     [SerializeField] bool hasControl;
     public static PlayerMovement localPlayer;
     public bool ImposterFunc;
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     Rigidbody myRB;
     Transform myAvatar;
     Animator myAnim;
-
+    GameController GameController;
     [SerializeField] private TextMeshProUGUI nameText;
     //Player movement
     [SerializeField] InputAction WASD;
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
     Camera myCamera;
     [SerializeField] InputAction INTERACTION;
     [SerializeField] LayerMask interactLayer;
-
+    
     //Networking
     PhotonView myPV;
     [SerializeField] GameObject lightMask;
@@ -145,6 +145,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         }
 
         mousePositionInput = MOUSE.ReadValue<Vector2>();
+
     }
 
     private void FixedUpdate()
@@ -163,10 +164,8 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
         }
     }
 
-    public void SetRole(bool newRole)
-    {
-        isImposter = newRole;
-    }
+    public void SetRole(bool newRole) => isImposter = newRole;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -204,12 +203,11 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
             return;
         if (TimeLeft > 0)
             return;
+        
         if (context.phase == InputActionPhase.Performed)
-        {
+        {   
             if (targets.Count == 0)
-            {
-                myPV.RPC("RPC_KillerloadwinScene", RpcTarget.All);
-            }
+                return;
             else
             {
                 if (targets[targets.Count - 1].isDead)
@@ -220,15 +218,17 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
                 targets[targets.Count - 1].myPV.RPC("RPC_Kill", RpcTarget.All);
                 targets.RemoveAt(targets.Count - 1);
                 StartCoroutine(Killtime());
+                GameController.totalplayer--;
+                if (GameController.totalplayer == 1)
+                {
+                    myPV.RPC("RPC_KillerloadwinScene", RpcTarget.All);
+                }
             }
         }
     }
 
     [PunRPC]
-    void RPC_Kill()
-    {
-        Die();
-    }
+    void RPC_Kill() => Die();
 
     public void Die()
     {
@@ -329,7 +329,7 @@ public class PlayerMovement : MonoBehaviour, IPunObservable
 
     public void KillPlayer()
     {
-        //myAnim.SetTrigger("Dead");
+        myAnim.SetTrigger("Dead");
     }
 
 

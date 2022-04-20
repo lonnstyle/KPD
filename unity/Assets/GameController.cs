@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     private int whichPlayerIsImposter;
 
     public static GameController instance;
-
+    public int totalplayer;
     public bool numberTaskCompleted;
 
     private int TaskCount;
@@ -26,9 +26,11 @@ public class GameController : MonoBehaviour
 
     private void PickImposter()
     {
-        whichPlayerIsImposter = Random.Range(1, PhotonNetwork.CurrentRoom.PlayerCount+1);
+        totalplayer = PhotonNetwork.CurrentRoom.PlayerCount;
+        whichPlayerIsImposter = Random.Range(1, PhotonNetwork.CurrentRoom.PlayerCount);
         myPv.RPC(nameof(RPC_SyncImposter), RpcTarget.All, whichPlayerIsImposter);
         Debug.Log("Imposter " + whichPlayerIsImposter);
+        Debug.Log("Total player:" + totalplayer);    
     }
 
     [PunRPC]
