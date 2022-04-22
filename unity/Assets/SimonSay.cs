@@ -84,14 +84,10 @@ public class SimonSay : MonoBehaviour
             StartCoroutine(ColorBlink(green));
         }
     }
-    public void ClosePanel()
-    {
-        GamePanel.SetActive(false);
-    }
-    public void OpenPanel()
-    {
-        GamePanel.SetActive(true);
-    }
+    public void ClosePanel() => GamePanel.SetActive(false);
+
+    public void OpenPanel() => GamePanel.SetActive(true);
+
     IEnumerator ColorBlink(Color32 colorToBlink)
     {
         for (int j = 0; j < 3; j++)
